@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: dev
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
+
+db-config:
+  dev:
+    host: 127.0.0.1     # By default localhost
+    port: 3306          # By default MySQL port number 3306
+    username: # Username for database connection
+    password: # Password for the corresponding database user
+    database: # Development database name, need to be created before connecting
+  test:
+    host: 127.0.0.1     # By default localhost
+    port: 3306          # By default MySQL port number 3306
+    username: # Username for database connection
+    password: # Password for the corresponding database user
+    database: # Test database name, need to be created before connecting
+  prod:
+    host: 127.0.0.1     # By default localhost
+    port: 3306          # By default MySQL port number 3306
+    username: # Username for database connection
+    password: # Password for the corresponding database user
+    database: # Production database name, need to be created before connecting
+
+redis-config:
+  host: 127.0.0.1       # By default localhost
+  port: 6379            # By default Redis port number 6379
+  password: # Redis database authentication password
+  database: 0           # By default, the database with index 0 will be used

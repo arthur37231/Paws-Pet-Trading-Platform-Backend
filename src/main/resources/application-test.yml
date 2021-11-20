@@ -1,0 +1,23 @@
+server:
+  port: 8085
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${db-config.test.host}:${db-config.test.port}/${db-config.test.database}?useUnicode=true&characterEncoding=utf-8
+    username: ${db-config.test.username}
+    password: ${db-config.test.password}
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+  redis:
+    host: ${redis-config.host}
+    port: ${redis-config.port}
+    password: ${redis-config.password}
+    database: ${redis-config.database}
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB

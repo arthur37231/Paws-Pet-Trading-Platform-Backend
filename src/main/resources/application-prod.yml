@@ -1,0 +1,28 @@
+server:
+  port: 108080
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${db-config.prod.host}:${db-config.prod.port}/${db-config.prod.database}?useUnicode=true&characterEncoding=utf-8
+    username: ${db-config.prod.username}
+    password: ${db-config.prod.password}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  redis:
+    host: ${redis-config.host}
+    port: ${redis-config.port}
+    password: ${redis-config.password}
+    database: ${redis-config.database}
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: false
+
+  servlet:
+    multipart:
+      max-file-size: 20MB
+      max-request-size: 20MB
